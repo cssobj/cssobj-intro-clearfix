@@ -23,26 +23,32 @@ bower install cssobj-intro-clearfix
 ```javascript
 var clearfix = require('cssobj-intro-clearfix')
 
-cssobj(obj, {
-  intro: [
-    clearfix({ className:'clear', oldIE:true, useBlock:false })
-  ]
-})
+cssobj(
+  { div: {color: 'red'} },
+  {
+    intro: [
+      clearfix()
+    ]
+  }
+)
 ```
 
 result css:
 
 ``` css
-.clear:before,
-.clear:after {
+.clearfix:before,
+.clearfix:after {
     content: " ";
     display: table;
 }
-.clear:after {
+.clearfix:after {
     clear: both;
 }
-.clear {
+.clearfix {
     *zoom: 1;
+}
+div {
+    color: red;
 }
 ```
 
