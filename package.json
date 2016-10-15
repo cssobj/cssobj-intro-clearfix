@@ -1,11 +1,12 @@
 {
   "name": "cssobj-intro-clearfix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "cssobj intro to make clearfix easier",
   "main": "dist/cssobj-intro-clearfix.cjs.js",
   "scripts": {
     "test": "mocha",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "make": "gulp bump && npm run build"
   },
   "repository": {
     "type": "git",
