@@ -20,13 +20,17 @@ bower install cssobj-intro-clearfix
 
 ## Usage
 
+- **basic usage**:
+
+When you need to put `'<div class="clearfix nav">'`, but don't remember the [clearfix hack][The very latest clearfix reloaded], or don't want to copy/paste, use this plugin as below:
+
 ```javascript
 var clearfix = require('cssobj-intro-clearfix')
 
 cssobj(
-  { div: {color: 'red'} },
+  { '.nav': {color: 'red'} },
   {
-    intro: [
+    intros: [
       clearfix()
     ]
   }
@@ -47,10 +51,55 @@ result css:
 .clearfix {
     *zoom: 1;
 }
-div {
+.nav {
     color: red;
 }
 ```
+
+- **use with [plugin-extend](https://github.com/cssobj/cssobj-plugin-extend)**
+
+So your html can be as clean as: `'<div class="nav">'`, no need to write `clearfix` in your tag.
+
+```javascript
+var clearfix = require('cssobj-intro-clearfix')
+var pluginExtend = require('cssobj-plugin-extend')
+
+cssobj(
+  { '.nav': {color: 'red', $extend: /\.clearfix\b/} },
+  {
+    intros: [
+      clearfix()
+    ],
+    plugins: [
+      pluginExtend()
+    ]
+  }
+)
+```
+
+result css:
+
+``` css
+.clearfix:before,
+.clearfix:after,
+.nav:before,
+.nav:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after,
+.nav:after {
+    clear: both;
+}
+.clearfix,
+.nav {
+    *zoom: 1;
+}
+.nav {
+    color: red;
+}
+```
+
 
 ## Option
 
