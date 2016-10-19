@@ -1,5 +1,7 @@
 # cssobj-intro-clearfix
 
+[![Join the chat at https://gitter.im/css-in-js/cssobj](https://badges.gitter.im/css-in-js/cssobj.svg)](https://gitter.im/css-in-js/cssobj)
+
 [cssobj](https://github.com/cssobj/cssobj) intro to make clearfix easier. code from [The very latest clearfix reloaded][]
 
 [The very latest clearfix reloaded]: http://cssmojo.com/the-very-latest-clearfix-reloaded/
